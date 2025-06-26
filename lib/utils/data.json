@@ -1,0 +1,143 @@
+{
+  "popular_movies": [
+    {
+      "title": "Inception",
+      "release_year": 2010,
+      "poster_url": "https://m.media-amazon.com/images/M/MV5BMjAxMzY3NjcxNF5BMl5BanBnXkFtZTcwNTI5OTM0Mw@@._V1_SX300.jpg",
+      "imdb_id": "tt1375666"
+    },
+    {
+      "title": "The Dark Knight",
+      "release_year": 2008,
+      "poster_url": "https://m.media-amazon.com/images/M/MV5BMTMxNTMwODM0NF5BMl5BanBnXkFtZTcwODAyMTk2Mw@@._V1_SX300.jpg",
+      "imdb_id": "tt0468569"
+    },
+    {
+      "title": "Interstellar",
+      "release_year": 2014,
+      "poster_url": "https://upload.wikimedia.org/wikipedia/en/b/bc/Interstellar_film_poster.jpg",
+      "imdb_id": "tt0816692"
+    },
+    {
+      "title": "Fight Club",
+      "release_year": 1999,
+      "poster_url": "https://upload.wikimedia.org/wikipedia/en/f/fc/Fight_Club_poster.jpg",
+      "imdb_id": "tt0137523"
+    },
+    {
+      "title": "The Matrix",
+      "release_year": 1999,
+      "poster_url": "https://m.media-amazon.com/images/M/MV5BN2NmN2VhMTQtMDNiOS00NDlhLTliMjgtODE2ZTY0ODQyNDRhXkEyXkFqcGc@._V1_SX300.jpg",
+      "imdb_id": "tt0133093"
+    },
+    {
+      "title": "Pulp Fiction",
+      "release_year": 1994,
+      "poster_url": "https://m.media-amazon.com/images/M/MV5BYTViYTE3ZGQtNDBlMC00ZTAyLTkyODMtZGRiZDg0MjA2YThkXkEyXkFqcGc@._V1_SX300.jpg",
+      "imdb_id": "tt0110912"
+    },
+    {
+      "title": "The Shawshank Redemption",
+      "release_year": 1994,
+      "poster_url": "https://upload.wikimedia.org/wikipedia/en/8/81/ShawshankRedemptionMoviePoster.jpg",
+      "imdb_id": "tt0111161"
+    },
+    {
+      "title": "Forrest Gump",
+      "release_year": 1994,
+      "poster_url": "https://upload.wikimedia.org/wikipedia/en/6/67/Forrest_Gump_poster.jpg",
+      "imdb_id": "tt0109830"
+    },
+    {
+      "title": "Gladiator",
+      "release_year": 2000,
+      "poster_url": "https://m.media-amazon.com/images/M/MV5BYWQ4YmNjYjEtOWE1Zi00Y2U4LWI4NTAtMTU0MjkxNWQ1ZmJiXkEyXkFqcGc@._V1_SX300.jpg",
+      "imdb_id": "tt0172495"
+    },
+    {
+      "title": "The Godfather",
+      "release_year": 1972,
+      "poster_url": "https://upload.wikimedia.org/wikipedia/en/1/1c/Godfather_ver1.jpg",
+      "imdb_id": "tt0068646"
+    }
+  ],
+
+  "Marvel's Avengers": [
+    {
+      "title": "The Avengers",
+      "release_year": 2012,
+      "poster_url": "https://m.media-amazon.com/images/M/MV5BNGE0YTVjNzUtNzJjOS00NGNlLTgxMzctZTY4YTE1Y2Y1ZTU4XkEyXkFqcGc@._V1_SX300.jpg",
+      "imdb_id": "tt0848228"
+    },
+    {
+      "title": "Avengers: Age of Ultron",
+      "release_year": 2015,
+      "poster_url": "https://m.media-amazon.com/images/M/MV5BODBhYTg1NGQtNGVmNS00ZTdiLThjYTYtZDFkNzRiNTZmNDZjXkEyXkFqcGc@._V1_SX300.jpg",
+      "imdb_id": "tt2395427"
+    },
+    {
+      "title": "Avengers: Infinity War",
+      "release_year": 2018,
+      "poster_url": "https://upload.wikimedia.org/wikipedia/en/4/4d/Avengers_Infinity_War_poster.jpg",
+      "imdb_id": "tt4154756"
+    },
+    {
+      "title": "Avengers: Endgame",
+      "release_year": 2019,
+      "poster_url": "https://upload.wikimedia.org/wikipedia/en/0/0d/Avengers_Endgame_poster.jpg",
+      "imdb_id": "tt4154796"
+    },
+    {}
+  ],
+
+  "Go back to Childhood": [
+    {
+      "title": "Harry Potter and the Philosopher's Stone",
+      "release_year": 2001,
+      "poster_url": "https://m.media-amazon.com/images/M/MV5BNTU1MzgyMDMtMzBlZS00YzczLThmYWEtMjU3YmFlOWEyMjE1XkEyXkFqcGc@._V1_SX300.jpg",
+      "imdb_id": "tt0241527"
+    },
+    {
+      "title": "Harry Potter and the Chamber of Secrets",
+      "release_year": 2002,
+      "poster_url": "https://m.media-amazon.com/images/M/MV5BNGJhM2M2MWYtZjIzMC00MDZmLThkY2EtOWViMDhhYjRhMzk4XkEyXkFqcGc@._V1_SX300.jpg",
+      "imdb_id": "tt0295297"
+    },
+    {
+      "title": "Harry Potter and the Prisoner of Azkaban",
+      "release_year": 2004,
+      "poster_url": "https://m.media-amazon.com/images/M/MV5BMTY4NTIwODg0N15BMl5BanBnXkFtZTcwOTc0MjEzMw@@._V1_SX300.jpg",
+      "imdb_id": "tt0304141"
+    },
+    {
+      "title": "Harry Potter and the Goblet of Fire",
+      "release_year": 2005,
+      "poster_url": "https://m.media-amazon.com/images/M/MV5BMTI1NDMyMjExOF5BMl5BanBnXkFtZTcwOTc4MjQzMQ@@._V1_SX300.jpg",
+      "imdb_id": "tt0330373"
+    },
+    {
+      "title": "Harry Potter and the Order of the Phoenix",
+      "release_year": 2007,
+      "poster_url": "https://m.media-amazon.com/images/M/MV5BYWJmM2M1YzItMjY1Ni00YzRmLTg5YWYtNDFmNTJjNzQ0ODkyXkEyXkFqcGc@._V1_SX300.jpg",
+      "imdb_id": "tt0373889"
+    },
+    {
+      "title": "Harry Potter and the Half‑Blood Prince",
+      "release_year": 2009,
+      "poster_url": "https://m.media-amazon.com/images/M/MV5BNzU3NDg4NTAyNV5BMl5BanBnXkFtZTcwOTg2ODg1Mg@@._V1_SX300.jpg",
+      "imdb_id": "tt0417741"
+    },
+    {
+      "title": "Harry Potter and the Deathly Hallows: Part 1",
+      "release_year": 2010,
+      "poster_url": "https://m.media-amazon.com/images/M/MV5BMTQ2OTE1Mjk0N15BMl5BanBnXkFtZTcwODE3MDAwNA@@._V1_SX300.jpg",
+      "imdb_id": "tt0926084"
+    },
+    {
+      "title": "Harry Potter and the Deathly Hallows: Part 2",
+      "release_year": 2011,
+      "poster_url": "https://m.media-amazon.com/images/M/MV5BOTA1Mzc2N2ItZWRiNS00MjQzLTlmZDQtMjU0NmY1YWRkMGQ4XkEyXkFqcGc@._V1_SX300.jpg",
+      "imdb_id": "tt1201607"
+    }
+  ]
+}
