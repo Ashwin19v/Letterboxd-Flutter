@@ -1,20 +1,29 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:letterboxd/pages/main_page.dart';
 import 'package:letterboxd/pages/search_movie_page.dart';
 import 'package:letterboxd/pages/view_review_page.dart';
+import 'package:letterboxd/store/auth/auth_controller.dart';
 
-class MainNavigation extends StatefulWidget {
+class MainNavigation extends ConsumerStatefulWidget {
   const MainNavigation({super.key});
 
   @override
-  State<MainNavigation> createState() => _MainNavigationState();
+  ConsumerState<MainNavigation> createState() => _MainNavigationState();
 }
 
-class _MainNavigationState extends State<MainNavigation> {
+class _MainNavigationState extends ConsumerState<MainNavigation> {
   int _currentIndex = 0;
-  final List<Widget> _pages = [const MainPage(), const ViewReviewPage(), const SearchMoviePage()];
+  final List<Widget> _pages = [
+    const MainPage(),
+    const ViewReviewPage(),
+    const SearchMoviePage()
+  ];
+
   @override
   Widget build(BuildContext context) {
+    final user = ref.watch(authControllerProvider);
+
     return Scaffold(
       appBar: AppBar(
         title: const Text('Letterboxd'),
@@ -36,16 +45,18 @@ class _MainNavigationState extends State<MainNavigation> {
       drawer: Drawer(
         child: Column(
           children: <Widget>[
-            const UserAccountsDrawerHeader(
-              accountName: Text('User Name'),
-              accountEmail: Text('fg'),
+            UserAccountsDrawerHeader(
+              accountName: Text(user?.displayName ?? 'Guest User'),
+              accountEmail: Text(user?.email ?? 'No Email'),
               currentAccountPicture: CircleAvatar(
                 child: Text(
-                  'U',
-                  style: TextStyle(fontSize: 24.0),
+                  (user?.displayName?.isNotEmpty ?? false)
+                      ? user!.displayName![0].toUpperCase()
+                      : 'G',
+                  style: const TextStyle(fontSize: 24.0),
                 ),
               ),
-              decoration: BoxDecoration(
+              decoration: const BoxDecoration(
                 color: Colors.black54,
               ),
             ),

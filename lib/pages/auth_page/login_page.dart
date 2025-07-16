@@ -17,25 +17,39 @@ class _LoginPageState extends ConsumerState<LoginPage> {
   bool isLoading = false;
 
   void login() async {
+    if (emailController.text.trim().isEmpty ||
+        passwordController.text.trim().isEmpty) {
+      ScaffoldMessenger.of(context).showSnackBar(
+        const SnackBar(
+          content: Text('Please fill in all fields'),
+          backgroundColor: Colors.red,
+        ),
+      );
+      return;
+    }
+
     setState(() => isLoading = true);
 
     final email = emailController.text.trim();
     final password = passwordController.text.trim();
 
-    final authController = ref.read(authControllerProvider.notifier);
-
     try {
-      authController.login(email, password);
-      setState(() => isLoading = false);
+      await ref.read(authControllerProvider.notifier).login(email, password);
 
-      Navigator.pushReplacementNamed(context, '/home');
+      if (mounted) {
+        setState(() => isLoading = false);
+        Navigator.pushReplacementNamed(context, '/home');
+      }
     } catch (e) {
-      setState(() => isLoading = false);
-
-      ScaffoldMessenger.of(context).showSnackBar(SnackBar(
-        content: Text(e.toString()),
-        backgroundColor: Colors.red,
-      ));
+      if (mounted) {
+        setState(() => isLoading = false);
+        ScaffoldMessenger.of(context).showSnackBar(
+          SnackBar(
+            content: Text(e.toString().replaceFirst('Exception: ', '')),
+            backgroundColor: Colors.red,
+          ),
+        );
+      }
     }
   }
 

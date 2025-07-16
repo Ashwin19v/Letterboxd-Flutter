@@ -17,10 +17,13 @@ class AuthRepository {
       await userCredential.user?.reload();
 
       return _auth.currentUser;
+    } on FirebaseAuthException catch (e) {
+      debugPrint('❌ Signup error: ${e.message}');
+      throw Exception(e.message ?? 'Signup failed');
     } catch (e, stackTrace) {
       debugPrint('❌ Signup error: $e');
       debugPrintStack(stackTrace: stackTrace);
-      return null;
+      throw Exception('An unexpected error occurred');
     }
   }
 
@@ -32,10 +35,13 @@ class AuthRepository {
       );
       await userCredential.user?.reload();
       return _auth.currentUser;
+    } on FirebaseAuthException catch (e) {
+      debugPrint('❌ Login error: ${e.message}');
+      throw Exception(e.message ?? 'Login failed');
     } catch (e, stackTrace) {
       debugPrint('❌ Login error: $e');
       debugPrintStack(stackTrace: stackTrace);
-      return null;
+      throw Exception('An unexpected error occurred');
     }
   }
 

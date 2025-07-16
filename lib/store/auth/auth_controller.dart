@@ -19,16 +19,12 @@ class AuthController extends StateNotifier<User?> {
 
   Future<void> signup(String email, String password, String name) async {
     final newUser = await repo.signup(email, password, name);
-    if (newUser != null) {
-      state = newUser;
-    }
+    state = newUser;
   }
 
   Future<void> login(String email, String password) async {
     final loggedInUser = await repo.login(email, password);
-    if (loggedInUser != null) {
-      state = loggedInUser;
-    }
+    state = loggedInUser;
   }
 
   void logout() async {

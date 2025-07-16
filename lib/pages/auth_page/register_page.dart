@@ -16,26 +16,43 @@ class _RegisterPageState extends ConsumerState<RegisterPage> {
   bool isLoading = false;
 
   void register() async {
+    if (emailController.text.trim().isEmpty ||
+        passwordController.text.trim().isEmpty ||
+        nameController.text.trim().isEmpty) {
+      ScaffoldMessenger.of(context).showSnackBar(
+        const SnackBar(
+          content: Text('Please fill in all fields'),
+          backgroundColor: Colors.red,
+        ),
+      );
+      return;
+    }
+
     setState(() => isLoading = true);
 
     final email = emailController.text.trim();
     final password = passwordController.text.trim();
     final name = nameController.text.trim();
 
-    final authController = ref.read(authControllerProvider.notifier);
     try {
-      await authController.signup(email, password, name);
-      setState(() => isLoading = false);
-      Navigator.pushReplacementNamed(context, '/home');
-    } catch (e) {
-      setState(() => isLoading = false);
+      await ref
+          .read(authControllerProvider.notifier)
+          .signup(email, password, name);
 
-      ScaffoldMessenger.of(context).showSnackBar(
-        SnackBar(
-          content: Text(e.toString()),
-          backgroundColor: Colors.red,
-        ),
-      );
+      if (mounted) {
+        setState(() => isLoading = false);
+        Navigator.pushReplacementNamed(context, '/home');
+      }
+    } catch (e) {
+      if (mounted) {
+        setState(() => isLoading = false);
+        ScaffoldMessenger.of(context).showSnackBar(
+          SnackBar(
+            content: Text(e.toString().replaceFirst('Exception: ', '')),
+            backgroundColor: Colors.red,
+          ),
+        );
+      }
     }
   }
 
