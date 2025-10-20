@@ -135,27 +135,32 @@ class MovieInfoPage extends ConsumerWidget {
                     const SizedBox(height: 8),
                     Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
+                      children: [
                         Text(
                           movieDetails['imdbRating'] ?? 'N/A',
                           style: const TextStyle(
-                            fontSize: 24,
-                            color: Colors.white70,
-                            fontWeight: FontWeight.w900),
+                              fontSize: 24,
+                              color: Colors.white70,
+                              fontWeight: FontWeight.w900),
                         ),
                         Row(
                           children: List.generate(5, (index) {
-                          double rating = 0.0;
-                          try {
-                            rating = double.parse(movieDetails['imdbRating'] ?? '0') / 2;
-                          } catch (_) {}
-                          if (rating >= index + 1) {
-                            return const Icon(Icons.star, color: Colors.yellow);
-                          } else if (rating > index && rating < index + 1) {
-                            return const Icon(Icons.star_half, color: Colors.yellow);
-                          } else {
-                            return const Icon(Icons.star_border, color: Colors.yellow);
-                          }
+                            double rating = 0.0;
+                            try {
+                              rating = double.parse(
+                                      movieDetails['imdbRating'] ?? '0') /
+                                  2;
+                            } catch (_) {}
+                            if (rating >= index + 1) {
+                              return const Icon(Icons.star,
+                                  color: Colors.yellow);
+                            } else if (rating > index && rating < index + 1) {
+                              return const Icon(Icons.star_half,
+                                  color: Colors.yellow);
+                            } else {
+                              return const Icon(Icons.star_border,
+                                  color: Colors.yellow);
+                            }
                           }),
                         ),
                       ],
@@ -175,9 +180,9 @@ class MovieInfoPage extends ConsumerWidget {
                             borderRadius: BorderRadius.circular(12),
                           ),
                         ),
-                        onPressed: () {
+                        onPressed: () async {
                           if (uid != null) {
-                            firebaseService.addToWatchlist(
+                            await firebaseService.addToWatchlist(
                                 uid, movieDetails, ref);
                             ScaffoldMessenger.of(context).showSnackBar(
                               const SnackBar(
@@ -218,9 +223,9 @@ class MovieInfoPage extends ConsumerWidget {
                             borderRadius: BorderRadius.circular(12),
                           ),
                         ),
-                        onPressed: () {
+                        onPressed: () async {
                           if (uid != null) {
-                            firebaseService.addToRecentWatch(
+                            await firebaseService.addToRecentWatch(
                                 uid, movieDetails, ref);
                             ScaffoldMessenger.of(context).showSnackBar(
                               const SnackBar(

@@ -51,6 +51,8 @@ class _AddReviewPageState extends ConsumerState<AddReviewPage> {
     }
 
     final uid = ref.read(authControllerProvider)?.uid;
+    final name = ref.read(authControllerProvider)?.displayName;
+  
     if (uid == null) return;
 
     setState(() => _isSubmitting = true);
@@ -61,6 +63,7 @@ class _AddReviewPageState extends ConsumerState<AddReviewPage> {
         'rating': _rating,
         'review': _reviewController.text.trim(),
         'watchedDate': _selectedDate.toIso8601String(),
+        'reviewBy': name,
       };
 
       await ref.read(firestoreProvider).addReview(uid, review, ref);
@@ -83,7 +86,7 @@ class _AddReviewPageState extends ConsumerState<AddReviewPage> {
       SnackBar(
         content: Text(message),
         behavior: SnackBarBehavior.floating,
-        backgroundColor: Colors.grey[800],
+        backgroundColor: const Color.fromARGB(255, 254, 254, 254),
       ),
     );
   }

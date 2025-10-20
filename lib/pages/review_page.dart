@@ -51,9 +51,10 @@ class ReviewPage extends ConsumerWidget {
     final double rating = (review['rating'] ?? 0).toDouble();
     final String reviewText = review['review'] ?? 'No review text';
     final String movieTitle = review['Title'] ?? 'Unknown Movie';
-    final String reviewerName = review['uid'] ?? 'Anonymous';
+    // final String reviewerName = review['uid'] ?? 'Anonymous';
     final String year = review['Year'] ?? '';
     final String watchDate = review['watchedDate'] ?? 'Unknown date';
+    final String reviewedBy = review['reviewBy'];
 
     return Scaffold(
       appBar: AppBar(
@@ -69,12 +70,6 @@ class ReviewPage extends ConsumerWidget {
         ),
         actions: [
           if (isCurrentUserReview) ...[
-            IconButton(
-              icon: const Icon(Icons.edit),
-              onPressed: () {
-                // TODO: Implement edit functionality
-              },
-            ),
             IconButton(
               icon: const Icon(Icons.delete),
               onPressed: () async {
@@ -193,15 +188,15 @@ class ReviewPage extends ConsumerWidget {
                             const Text(
                               'Review by',
                               style: TextStyle(
-                                fontSize: 12,
+                                fontSize: 14,
                                 color: Colors.grey,
                               ),
                             ),
                             const SizedBox(height: 4),
                             Text(
-                              reviewerName,
+                              reviewedBy,
                               style: const TextStyle(
-                                fontSize: 12,
+                                fontSize: 16,
                                 fontWeight: FontWeight.bold,
                                 color: Colors.white,
                               ),

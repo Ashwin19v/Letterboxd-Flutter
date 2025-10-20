@@ -46,7 +46,7 @@ class _LoginPageState extends ConsumerState<LoginPage> {
         ScaffoldMessenger.of(context).showSnackBar(
           SnackBar(
             content: Text(e.toString().replaceFirst('Exception: ', '')),
-            backgroundColor: Colors.red,
+            backgroundColor: const Color.fromARGB(255, 215, 25, 25),
           ),
         );
       }
@@ -113,29 +113,7 @@ class _LoginPageState extends ConsumerState<LoginPage> {
                   ),
                 ),
                 const SizedBox(height: 20),
-                Column(
-                  crossAxisAlignment: CrossAxisAlignment.center,
-                  children: [
-                    const Text('Or login with:'),
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        IconButton(
-                          icon: const Icon(Icons.facebook),
-                          onPressed: () {
-                            // TODO: Implement Facebook login
-                          },
-                        ),
-                        IconButton(
-                          icon: const Icon(Icons.g_translate),
-                          onPressed: () {
-                            // TODO: Implement Google login
-                          },
-                        ),
-                      ],
-                    )
-                  ],
-                ),
+                
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [

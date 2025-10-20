@@ -126,70 +126,79 @@ class _SearchMoviePageState extends State<SearchMoviePage> {
               child: _isLoading
                   ? const Center(
                       child: CircularProgressIndicator(color: Colors.white))
-                  : GridView.count(
-                      crossAxisCount: 2,
-                      crossAxisSpacing: 12,
-                      mainAxisSpacing: 12,
-                      childAspectRatio: 0.7,
-                      children: _searchController.text.isEmpty
-                          ? List.generate(
-                              _movieData!['popular_movies'].length,
-                              (index) => GestureDetector(
-                                onTap: () {
-                                  _navigateToMovieInfo(
-                                      _movieData!['popular_movies'][index]
-                                          ['imdb_id']);
-                                },
-                                child: ClipRRect(
-                                  borderRadius: BorderRadius.circular(12),
-                                  child: Image.network(
-                                    _movieData!['popular_movies'][index]
-                                            ['poster_url'] ??
-                                        '',
-                                    errorBuilder:
-                                        (context, error, stackTrace) =>
-                                            Container(
-                                      color: Colors.grey,
-                                      child: const Center(
-                                        child: Text(
-                                          'No Poster',
-                                          style: TextStyle(color: Colors.white),
+                  : _searchController.text.isNotEmpty && _searchResults.isEmpty
+                      ? const Center(
+                          child: Text(
+                            'No results found',
+                            style: TextStyle(color: Colors.white),
+                          ),
+                        )
+                      : GridView.count(
+                          crossAxisCount: 2,
+                          crossAxisSpacing: 12,
+                          mainAxisSpacing: 12,
+                          childAspectRatio: 0.7,
+                          children: _searchController.text.isEmpty
+                              ? List.generate(
+                                  _movieData!['popular_movies'].length,
+                                  (index) => GestureDetector(
+                                    onTap: () {
+                                      _navigateToMovieInfo(
+                                          _movieData!['popular_movies'][index]
+                                              ['imdb_id']);
+                                    },
+                                    child: ClipRRect(
+                                      borderRadius: BorderRadius.circular(12),
+                                      child: Image.network(
+                                        _movieData!['popular_movies'][index]
+                                                ['poster_url'] ??
+                                            '',
+                                        errorBuilder:
+                                            (context, error, stackTrace) =>
+                                                Container(
+                                          color: Colors.grey,
+                                          child: const Center(
+                                            child: Text(
+                                              'No Poster',
+                                              style: TextStyle(
+                                                  color: Colors.white),
+                                            ),
+                                          ),
                                         ),
-                                      ),
-                                    ),
-                                    fit: BoxFit.cover,
-                                  ),
-                                ),
-                              ),
-                            )
-                          : List.generate(
-                              _searchResults.length,
-                              (index) => GestureDetector(
-                                onTap: () {
-                                  _navigateToMovieInfo(
-                                      _searchResults[index]['imdbID']);
-                                },
-                                child: ClipRRect(
-                                  borderRadius: BorderRadius.circular(12),
-                                  child: Image.network(
-                                    _searchResults[index]['Poster'] ?? '',
-                                    fit: BoxFit.cover,
-                                    errorBuilder:
-                                        (context, error, stackTrace) =>
-                                            Container(
-                                      color: Colors.grey,
-                                      child: const Center(
-                                        child: Text(
-                                          'No Poster',
-                                          style: TextStyle(color: Colors.white),
-                                        ),
+                                        fit: BoxFit.cover,
                                       ),
                                     ),
                                   ),
+                                )
+                              : List.generate(
+                                  _searchResults.length,
+                                  (index) => GestureDetector(
+                                    onTap: () {
+                                      _navigateToMovieInfo(
+                                          _searchResults[index]['imdbID']);
+                                    },
+                                    child: ClipRRect(
+                                      borderRadius: BorderRadius.circular(12),
+                                      child: Image.network(
+                                        _searchResults[index]['Poster'] ?? '',
+                                        fit: BoxFit.cover,
+                                        errorBuilder:
+                                            (context, error, stackTrace) =>
+                                                Container(
+                                          color: Colors.grey,
+                                          child: const Center(
+                                            child: Text(
+                                              'No Poster',
+                                              style: TextStyle(
+                                                  color: Colors.white),
+                                            ),
+                                          ),
+                                        ),
+                                      ),
+                                    ),
+                                  ),
                                 ),
-                              ),
-                            ),
-                    ),
+                        ),
             ),
           ],
         ),

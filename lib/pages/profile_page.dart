@@ -10,6 +10,7 @@ class ProfilePage extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final user = ref.watch(authControllerProvider);
+    print('User: $user');
     final userReviewsAsync = ref.watch(userReviewProvider);
     final userWatchlist = ref.watch(watchlistProvider);
     final userRecent = ref.watch(recentWatchProvider);
@@ -46,11 +47,23 @@ class ProfilePage extends ConsumerWidget {
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
-                  const CircleAvatar(
+                  CircleAvatar(
                     radius: 50,
-                    backgroundImage: AssetImage(
-                      'lib/assets/images/poster1.jpg',
-                    ),
+                    backgroundColor: Colors.deepPurple,
+                    backgroundImage: user?.photoURL != null
+                        ? NetworkImage(user!.photoURL!)
+                        : null,
+                    child: user?.photoURL == null &&
+                            user?.displayName?.isNotEmpty == true
+                        ? Text(
+                            user!.displayName![0].toUpperCase(),
+                            style: const TextStyle(
+                              fontSize: 40,
+                              fontWeight: FontWeight.bold,
+                              color: Colors.white,
+                            ),
+                          )
+                        : null,
                   ),
                   Column(
                     crossAxisAlignment: CrossAxisAlignment.start,

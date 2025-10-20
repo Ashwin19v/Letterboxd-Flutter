@@ -132,29 +132,6 @@ class _RegisterPageState extends ConsumerState<RegisterPage> {
                   ),
                 ),
                 const SizedBox(height: 20),
-                Column(
-                  crossAxisAlignment: CrossAxisAlignment.center,
-                  children: [
-                    const Text('Or login with:'),
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        IconButton(
-                          icon: const Icon(Icons.facebook),
-                          onPressed: () {
-                            // TODO: Implement Facebook login
-                          },
-                        ),
-                        IconButton(
-                          icon: const Icon(Icons.g_translate),
-                          onPressed: () {
-                            // TODO: Implement Google login
-                          },
-                        ),
-                      ],
-                    )
-                  ],
-                ),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [

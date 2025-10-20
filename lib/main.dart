@@ -2,17 +2,17 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:letterboxd/components/auth_gate.dart';
-import 'package:letterboxd/pages/add_review_page.dart';
+
 import 'package:letterboxd/pages/auth_page/login_page.dart';
 import 'package:letterboxd/pages/auth_page/register_page.dart';
 import 'package:letterboxd/pages/intro_page.dart';
-import 'package:letterboxd/pages/list_display_page.dart';
+
 import 'package:letterboxd/pages/list_page.dart';
 import 'package:letterboxd/pages/main_navigation.dart';
-import 'package:letterboxd/pages/movie_info_page.dart';
+
 import 'package:letterboxd/pages/profile_page.dart';
 import 'package:letterboxd/pages/recent_watch_page.dart';
-import 'package:letterboxd/pages/review_page.dart';
+
 import 'package:letterboxd/pages/watchlist_page.dart';
 
 void main() async {
@@ -83,10 +83,6 @@ class MyApp extends StatelessWidget {
         '/watchlist': (_) => const WatchlistPage(),
         '/recent': (_) => const RecentWatchPage(),
         '/profile': (_) => const ProfilePage(),
-        // '/movie_info': (_) => const MovieInfoPage(),
-        // '/add_review': (_) => const AddReviewPage(),
-        // '/view_review_detail': (_) => const ReviewPage(),
-        // '/list_display': (_) => const ListDisplayPage(),
       },
     );
   }

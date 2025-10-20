@@ -18,7 +18,7 @@ class ReviewTile extends StatelessWidget {
     final double rating = (review['rating'] ?? 0).toDouble();
     final String reviewText = review['review'] ?? 'No review text';
     final String movieTitle = review['Title'] ?? 'Unknown Movie';
-    final String reviewerName = review['uid'] ?? 'Anonymous';
+    final String reviewerName = review['reviewBy'] ?? 'Anonymous';
 
     return Container(
       margin: const EdgeInsets.all(8.0),
